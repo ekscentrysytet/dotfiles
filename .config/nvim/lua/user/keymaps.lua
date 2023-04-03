@@ -20,7 +20,7 @@ keymap('n', '<leader>fp', ':Telescope projects<CR>', opts)
 keymap('n', '<leader>fb', ':Telescope buffers<CR>', opts)
 
 -- ToggleTerm
-keymap('t', 'jk', [[<C-\><C-n>]], opts)
+keymap('t', '<ESC>', [[<C-\><C-n>]], opts)
 
 -- splits
 keymap("n", "<leader>h", ":vertical resize -4<CR>", opts)

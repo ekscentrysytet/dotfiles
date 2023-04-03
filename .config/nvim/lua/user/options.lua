@@ -24,5 +24,23 @@ vim.opt.swapfile = false
 vim.opt.termguicolors = true
 
 vim.cmd([[
-  let g:lightline = {'colorscheme': 'tokyonight'}
+  " lightline config
+  let g:lightline = {
+    \ 'colorscheme': 'tokyonight',
+    \ 'active': {
+    \     'left': [ [ 'mode', 'paste' ],
+    \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \   },
+    \   'component_function': {
+    \     'gitbranch': 'gitbranch#name'
+    \   },
+    \ }
+  " ALE config
+  let g:ale_fixers = {
+    \ 'javascript': ['prettier']
+    \ }
+  let g:ale_sign_error = '❌'
+  let g:ale_sign_warning = '⚠️'
+  let g:ale_linters_explicit = 1
+  let g:ale_fix_on_save = 1
 ]])

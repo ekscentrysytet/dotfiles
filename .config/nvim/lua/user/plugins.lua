@@ -45,9 +45,12 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'windwp/nvim-autopairs'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'EdenEast/nightfox.nvim'
   use 'folke/tokyonight.nvim'
-  use 'itchyny/lightline.vim'
+  use { 'itchyny/lightline.vim',
+    requires = {
+      'itchyny/vim-gitbranch'
+    }
+  }
   use 'tpope/vim-surround'
   use {
     'nvim-tree/nvim-tree.lua',
@@ -74,4 +77,6 @@ return packer.startup(function(use)
     }
   }
   use 'numToStr/Comment.nvim'
+  use 'lewis6991/gitsigns.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 end)
