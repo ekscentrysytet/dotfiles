@@ -14,10 +14,21 @@ configs.setup {
   highlight = {
     enable = true, -- false will disable the whole extension
   },
+  indent = { enable = true },
+  textobjects = {
+    select = {
+      enable = true,
+      keymaps = {
+        ['af'] = '@function.outer',
+        ['if'] = '@function.inner',
+      },
+    },
+  },
+
+  -- plugins integration
   autopairs = {
     enable = true,
   },
-  indent = { enable = true },
 
   context_commentstring = {
     enable = true,

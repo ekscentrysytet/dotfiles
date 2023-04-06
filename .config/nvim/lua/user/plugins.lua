@@ -44,7 +44,12 @@ packer.init {
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'windwp/nvim-autopairs'
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    requires = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+  }
   use 'folke/tokyonight.nvim'
   use { 'itchyny/lightline.vim',
     requires = {
@@ -60,7 +65,7 @@ return packer.startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'akinsho/toggleterm.nvim'
   -- CMP
@@ -78,5 +83,6 @@ return packer.startup(function(use)
   }
   use 'numToStr/Comment.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use "lukas-reineke/indent-blankline.nvim"
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'akinsho/bufferline.nvim'
 end)
